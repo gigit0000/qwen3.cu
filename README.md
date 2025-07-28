@@ -96,7 +96,7 @@ tok/s: 34.482759
 
 ## Acknoledgement
 - Inspired and baselined from Andrej Kapathy's [llama2.c](https://github.com/karpathy/llama2.c)
-- Most kernels and CUDA ports are originally adopted from @rogerallen's great repo [llama2.cu](https://github.com/rogerallen/)
+- Most kernels and CUDA ports were originally adopted from @rogerallen's great repo [llama2.cu](https://github.com/rogerallen/)
 - Based on my qwen3.c [repo](https://github.com/gigit0000/qwen3.c/)
 - FGPF
 
