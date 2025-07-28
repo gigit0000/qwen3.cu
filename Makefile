@@ -6,11 +6,12 @@ NVCC = nvcc
 
 # compile the Cuda version
 .PHONY: runcu
-run: runcu.cu
+runcu: runcu.cu
 	$(NVCC)  -O3 -o runcu runcu.cu -lm
 # compile cublas included
 .PHONY: runcublas                                                     
-run: runcu.cu                                                              $(NVCC)  -O3 -DUSE_CUBLAS -o runcublas runcu.cu -lm -lcublas
+runcublas: runcu.cu
+	$(NVCC)  -O3 -DUSE_CUBLAS -o runcublas runcu.cu -lm -lcublas
 
 # =========================
 # The below is not used hree.
