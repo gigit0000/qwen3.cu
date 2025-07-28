@@ -1,12 +1,12 @@
 # qwen3.cu
 
-`qwen3.cu` is a single-file, pure CUDA C implementation for running inference on the Qwen3 model with no external libraries, no dependencies. It’s a follow-up to my earlier weekend project, [qwen3.c](https://github.com/...), inspired by Andrej Karpathy’s [`llama2.c`](https://github.com/karpathy/llama2.c). Everything’s packed into one file from tokenization all the way to CUDA kernels, staying true to the spirit of minimalism.
+`qwen3.cu` is a **single-file, pure CUDA C implementation** for running inference on the Qwen3 model with no external libraries, no dependencies. It’s a follow-up to my earlier weekend project, [qwen3.c](https://github.com/...), inspired by Andrej Karpathy’s [`llama2.c`](https://github.com/karpathy/llama2.c). Everything’s packed into one file from tokenization all the way to CUDA kernels, staying true to the spirit of minimalism.
 
 This implementation runs the Qwen3 0.6B model, a small but capable model. I'm using **full-precision GGUF** here, chosen for its clarity and to help others learn its ways. Also, It’s fully self-contained, so there’s no need for any format conversion out of the box. Most GGUF models are quantized to 8-bit or lower, but for this project, you’ll want to use the FP32 version which you can download as below. Or, if you make it work from the BF16 weights, you can convert them using the included `convert_hf_to_gguf_ordered.py` script; I've made sure the layers are ordered numerically so everything aligns correctly.
 
 Even though GGUF files already include a binary tokenizer, this project reads vocab and merges from plain `.txt` files. It keeps things more transparent and easier to follow. Tokenization and detokenization overhead is negligible compared to the forward pass, so it doesn’t really impact TTS.
 
-It also supports multi-turn conversation out of the box, and native support for Qwen3’s reasoning mode. For reference, there’s also a cuBLAS version included. It’s roughly 2x faster for now, but I’ll probably try to narrow that gap in the future. My weekend’s way over... I’ll add more later.
+It also supports multi-turn conversation out of the box, and native support for Qwen3’s reasoning mode. For reference, there’s also a cuBLAS version included. It’s roughly 2x faster for now, but I’ll probably try to narrow that gap in the future. I’ll add more explanation on the code later.
 
 ## Quick Start
 
