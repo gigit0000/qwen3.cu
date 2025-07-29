@@ -33,9 +33,9 @@ make runcublas
 ```
 ## Description
 
-You can enable reasoning (-k 0) or multi-turn (-m 0):
+You can enable reasoning (-k 1) or multi-turn (-m 1):
 ```
-./runcu Qwen3-0.6B-FP32.gguf -k 0 -m 0 
+./runcu Qwen3-0.6B-FP32.gguf -k 1 -m 1 
 ```
 
 If you want to extract text files (vocab.txt, merges.txt and header.txt) on your own, you can use the scripts:
